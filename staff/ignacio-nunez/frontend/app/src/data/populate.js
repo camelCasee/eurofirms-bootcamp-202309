@@ -1,6 +1,7 @@
-import { generateId } from './helpers'
 import { User, Post } from './models'
+import { generateId } from './helpers'
 import db from './managers'
+
 // populate
 
 db.users[0] = new User(generateId(), 'Pepito Grillo', 'pepito@grillo.com', '123123123', [])

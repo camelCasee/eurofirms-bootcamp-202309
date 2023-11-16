@@ -1,5 +1,6 @@
-import { clonePost, cloneUser, generateId } from './helpers'
+import { cloneUser, clonePost, generateId } from './helpers'
 import { User, Post } from './models'
+
 // database collections
 
 const db = {

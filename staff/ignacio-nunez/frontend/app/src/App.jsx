@@ -1,5 +1,8 @@
-import React from "react"
-import Login from "./views/Login"
+import Login from './views/Login'
+import React from 'react'
+import Register from './views/Register'
+import Home from './views/Home'
+
 function App() {
   console.log('App')
 
@@ -9,26 +12,23 @@ function App() {
   const setView = viewState[1]
 
   function handleRegisterShow() {
-      setView('register')
+    setView('register')
   }
 
   function handleLoginShow() {
-      setView('login')
+    setView('login')
   }
 
   function handleHomeShow() {
-      setView('home')
+    setView('home')
   }
 
   return <>
-      {/* <Logo /> */}
+    {view === 'login' ? <Login onSuccess={handleHomeShow} onRegisterClick={handleRegisterShow} /> : null}
 
-      {view === 'login' ? <Login onSuccess={handleHomeShow} onRegisterClick={handleRegisterShow} /> : null}
+    {view === 'register' ? <Register onSuccess={handleLoginShow} onLoginClick={handleLoginShow} /> : null}
 
-      {/* {view === 'register' ? <Register onSuccess={handleLoginShow} onLoginClick={handleLoginShow} /> : null}
-
-      {view === 'home' ? <Home onLogout={handleLoginShow} /> : null} */}
-      {view === 'home' ? <div><h1>Hola Mundo</h1></div>: null}
+    {view === 'home' ? <Home onLogout={handleLoginShow} /> : null}
   </>
 }
 
